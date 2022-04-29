@@ -1,0 +1,41 @@
+  footer{
+    background-color:#6cf;
+    color: black;
+    text-align:center;
+    padding: 20px;
+    font-size: small;
+  }
+
+.allButFooter {
+    min-height: calc(100vh - 40px);
+  }
+
+
+  .github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+  @keyframes octocat-wave {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-25deg);
+    }
+
+    40% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(-25deg);
+    }
+
+    80% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+  }
