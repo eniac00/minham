@@ -15,14 +15,18 @@ function start(){
     print_element.forEach(element => document.getElementById("list_view").innerHTML += element);
 
     
-    document.getElementById("min_view").innerHTML = "<b> Minimum Hamming Distance: " + min + "</b>";
+    if(min == 1000){
+        document.getElementById("min_view").innerHTML = "<b> Something went wrong </b>";
+    }else{
+        document.getElementById("min_view").innerHTML = "<b> Minimum Hamming Distance: " + min + "</b>";
+    }
 }
 
 
 function hd_finder(bin_array){
 
     let print_element = [];
-    let min = 60; 
+    let min = 1000; 
 
     for(let i=0; i<bin_array.length; i++){
         for(let j=i; j<bin_array.length; j++){
