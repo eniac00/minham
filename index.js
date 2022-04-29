@@ -8,7 +8,9 @@ function start(){
 
     var bin_array = txt.split(",").map(function(item) {
         return item.trim();
-      });
+    });
+
+//    console.log(bin_array);
 
     let { min, print_element } = hd_finder(bin_array);
 
@@ -29,14 +31,10 @@ function hd_finder(bin_array){
     let min = 1000; 
 
     for(let i=0; i<bin_array.length; i++){
-        for(let j=i; j<bin_array.length; j++){
-            if(bin_array[i] != bin_array[j]){
-                hd = xor_one_count(bin_array[i], bin_array[j]);
-                if (hd < min){
-                    min = hd;
-                }
-                print_element.push("<p>" + bin_array[i] + " ^ " + bin_array[j] + " -> " + hd + "<p>");
-            }
+        for(let j=i+1; j<bin_array.length; j++){
+            hd = xor_one_count(bin_array[i], bin_array[j]);
+            min = (min>hd) ? hd : min; 
+            print_element.push("<p>" + bin_array[i] + " ^ " + bin_array[j] + " -> " + hd + "<p>");
         }
     }
 
